@@ -233,7 +233,7 @@ end
 function BulletList(items)
   local buffer = {}
   for _, item in pairs(items) do
-    if (item == "//beginchild") or (item == "//endchild\n") then
+    if (item == "//beginchild\n") or (item == "\n//endchild\n") then
       table.insert(buffer, item)
     else
       table.insert(buffer, " * " .. item)
@@ -246,7 +246,7 @@ function OrderedList(items, start)
   local buffer = {}
   local n = start
   for _, item in pairs(items) do
-    if (item == "//beginchild") or (item == "//endchild\n") then
+    if (item == "//beginchild\n") or (item == "\n//endchild\n") then
       table.insert(buffer, item)
     else
       table.insert(buffer, " " .. n .. ". " .. item)
