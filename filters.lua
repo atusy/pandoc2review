@@ -3,7 +3,7 @@ local function review_inline(x)
 end
 
 local beginchild = {pandoc.Plain(review_inline("//beginchild"))}
-local endchild = {pandoc.Plain(review_inline("//endchild"))}
+local endchild = {pandoc.Plain(review_inline("//endchild\n"))}
 
 local function markdown(text)
   return(pandoc.read(text, "markdown").blocks[1].content)
